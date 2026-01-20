@@ -1,0 +1,33 @@
+body {
+    background: #042c53;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.box {
+    width: 350px;
+    margin: 200px auto;
+    padding: 90px;
+    background: rgb(252, 251, 253);
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 0 10px gray;
+}
+
+input, select {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+button {
+    padding: 15px 70px;
+    background: #eda6de;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #c35794;
+}
