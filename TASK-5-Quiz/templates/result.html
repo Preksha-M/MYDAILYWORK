@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🏆 Quiz Completed</h1>
+    <p>Your Final Score:</p>
+    <h2>{{ score }} / {{ total }}</h2>
+
+    <a href="/playagain">
+        <button>Play Again</button>
+    </a>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Question {{ qno }}</h2>
+    <p>{{ question.question }}</p>
+
+    {% if show_feedback %}
+        <h3 class="feedback">{{ feedback }}</h3>
+
+        {% if correct_answer %}
+            <p class="correct-answer">
+                Correct Answer: {{ correct_answer }}
+            </p>
+        {% endif %}
+
+        <form method="get" action="/quiz">
+            <button>Next Question</button>
+        </form>
+
+    {% else %}
+        <form method="post">
+            {% for option in question.options %}
+                <label>
+                    <input type="radio" name="option" value="{{ option }}" required>
+                    {{ option }}
+                </label><br>
+            {% endfor %}
+            <button>Submit</button>
+        </form>
+    {% endif %}
+</div>
+</body>
+</html>
